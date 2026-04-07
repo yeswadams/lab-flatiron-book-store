@@ -45,3 +45,27 @@ const bookStore = {
 
 // Write your code here!
 
+// Challenge
+// Update Existing Element of title
+document.querySelector('#header').textContent = bookStore.name;
+
+// Create New Elements for each book
+const bookList = document.querySelector('#book-list');
+
+bookStore.books.forEach(book => {
+  const bookElement = document.createElement('li');
+  bookElement.innerHTML = `
+    <h3>${book.title}</h3>
+    <p>${book.author}</p>
+    <img src="${book.imageUrl}">
+  `;
+  bookList.appendChild(bookElement);
+});
+
+// Bonus Challenge
+// Delete Element
+document.querySelector('#delete-this').remove();
+
+
+
+
